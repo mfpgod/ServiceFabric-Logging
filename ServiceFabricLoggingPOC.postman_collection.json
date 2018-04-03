@@ -1,0 +1,187 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ServiceFabricLoggingPOC",
+		"_postman_id": "2392640b-3046-8cdb-a1ad-ad4c050c9367",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost/webapp/api/users",
+			"request": {
+				"url": "localhost/webapp/api/users",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"description": "Return all users from the DocumentDb & Http Service"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/webapp/api/users/1",
+			"request": {
+				"url": "localhost/webapp/api/users/e1c2bf0c-a329-401e-8c53-54fed5759548",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Return user by id:\n - users with guid ids will be returned from the DocumentDb\n  users with int ids will be returned from the DocumentDb"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/webapp/api/users",
+			"request": {
+				"url": "localhost/webapp/api/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Siarhei Kizer\"\n}"
+				},
+				"description": "Creates a user in a DocumentDb"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/webapp/api/users-fail",
+			"request": {
+				"url": "localhost/webapp/api/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Mr Balaz Gida\"\n}"
+				},
+				"description": "Test of automatic contract validation by Web Api"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/webapp/api/users/245a8d83-4816-435a-9f5e-8cc0b5b613ad",
+			"request": {
+				"url": "localhost/webapp/api/users/e1c2bf0c-a329-401e-8c53-54fed5759548",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Mr Siarhei Kizer\"\n}"
+				},
+				"description": "Updates a user in a DocumentDb.\nIf update of a non DocumentDb user is sent, exception is returned."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/webapp/api/users/6f76e766-a7be-495e-8e5d-a29028bb06fc",
+			"request": {
+				"url": "localhost/webapp/api/users/f7829b35-ff67-4484-87a6-3452905cc726",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Delete user from the DocumentDb.\nIf delete of a non DocumentDb user is sent, exception is returned."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/webapp/api/fail",
+			"request": {
+				"url": "localhost/webapp/api/fail",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Call of a service that always fails."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/webapp/api/operation?operationId=operationIdStatic",
+			"request": {
+				"url": {
+					"raw": "localhost/webapp/api/operation?operationId=operationIdStatic",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"webapp",
+						"api",
+						"operation"
+					],
+					"query": [
+						{
+							"key": "operationId",
+							"value": "operationIdStatic",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Calls a method that read operationId from query parameter configured."
+			},
+			"response": []
+		}
+	]
+}

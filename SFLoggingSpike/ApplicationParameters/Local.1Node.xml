@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/SFLoggingSpike" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="Adapters.ServiceBusDependencyReceiver_InstanceCount" Value="1" />
+    <Parameter Name="Adapters.DocumentDbDependency_InstanceCount" Value="1" />
+    <Parameter Name="Adapters.FailedDependency_InstanceCount" Value="1" />
+    <Parameter Name="Services.Dependency_InstanceCount" Value="1" />
+    <Parameter Name="Adapters.HttpDependency_InstanceCount" Value="1" />
+    <Parameter Name="Adapters.ServiceBusDependency_InstanceCount" Value="1" />
+    <Parameter Name="Services.WebApi_InstanceCount" Value="1" />
+  </Parameters>
+</Application>
